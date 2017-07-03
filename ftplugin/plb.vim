@@ -12,3 +12,6 @@ endif
 " Set the compiler
 execute ':compiler plb'
 
+" Set comment
+set commentstring=//%s
+
