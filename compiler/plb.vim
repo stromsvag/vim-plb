@@ -13,7 +13,7 @@ endif
 
 " The %f in errorformat must be followed by \ to make vim look for filename
 " that looks like 'isfname'. The first backslash escapes the second
-CompilerSet errorformat=%f\\:%l:%c:%m
+CompilerSet errorformat=
 CompilerSet makeprg=plbcmp\ %:p
 
 
