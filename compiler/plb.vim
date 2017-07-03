@@ -1,5 +1,5 @@
 if exists("current_compiler")
-    finish
+  finish
 endif
 
 let s:keepcpo= &cpo
@@ -16,7 +16,7 @@ endif
 CompilerSet errorformat=
 CompilerSet makeprg=plbcmp\ %:p
 
-
 let &cpo = s:keepcpo
 unlet s:keepcpo
 
+" vim: sw=2 ts=2 et
