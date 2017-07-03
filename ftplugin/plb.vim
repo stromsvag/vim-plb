@@ -17,4 +17,3 @@ setlocal commentstring=//%s
 
 " Set formatoptions, default is tcq
 setlocal formatoptions-=t
-
