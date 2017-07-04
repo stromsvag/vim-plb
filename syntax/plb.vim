@@ -7,6 +7,9 @@ endif
 
 syntax case ignore
 
+" Set syntax iskeywords (A-Z,a-z,0-9,#,$,_)
+syntax iskeyword @,48-57,35-36
+
 " PL/B BadWhitespace
 " ==================
 syntax match plbBadWhitespace "\v\s+$"
@@ -171,3 +174,4 @@ highlight link plbComment Comment
 " =======================
 
 let b:current_syntax = "plb"
+" vim: sw=2 ts=2 et
