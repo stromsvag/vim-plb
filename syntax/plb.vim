@@ -8,7 +8,7 @@ endif
 syntax case ignore
 
 " Set syntax iskeywords (A-Z,a-z,0-9,#,$,_)
-syntax iskeyword @,48-57,35-36
+syntax iskeyword @,48-57,35-36,_
 
 " PL/B BadWhitespace
 " ==================
