@@ -9,6 +9,12 @@ if exists("$PLB_PATH")
   let &path = &path . "," . substitute($PLB_PATH, ":", ",", "g")
 endif
 
+" To be able to go to an include file that has slash (such as "include file/inc")
+setlocal includeexpr+=substitute(v:fname,'\\/','\\.','g')
+
+" Add slash (/) to iskeyword to recognize filenames such as "file/inc" as an include file
+setlocal iskeyword+=47
+
 " Set the compiler
 execute ':compiler plb'
 
