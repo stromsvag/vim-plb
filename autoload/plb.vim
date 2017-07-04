@@ -39,4 +39,29 @@ function! plb#Run()
 
 endfunction
 
+function! plb#Debug()
+  silent !clear
+
+  " Select runtime directory
+  if exists("g:plb_runtime_dir")
+    " The plugin user has specified a runtime directory.
+    let runtime_dir = g:plb_runtime_dir
+  else
+    " Use file directory as runtime directory.
+    let runtime_dir = expand("%:p:h")
+  endif
+
+  " Check if there are any runtime arguments
+  if exists("g:plb_runtime_args")
+    let runtime_args = g:plb_runtime_args
+  else
+    let runtime_args = ""
+  endif
+
+  if has("win32")
+    " Windows
+    execute "!start cmd /c cd " . runtime_dir . " & " . "plbwin dbgiface " . shellescape(expand("%:t:r")) . " " . runtime_args . " & pause"
+  endif
+
+endfunction
 " vim: sw=2 ts=2 et
