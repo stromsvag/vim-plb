@@ -35,6 +35,9 @@ function! plb#Run()
   if has("win32")
     " Windows
     execute "!start cmd /c cd " . runtime_dir . " & " . "plbwin " . shellescape(expand("%:t:r")) . " " . runtime_args . " & pause"
+  else
+    "Linux
+    execute "!cd " . runtime_dir . " & " . "plb " . shellescape(expand("%:t:r")) . " " . runtime_args
   endif
 
 endfunction
