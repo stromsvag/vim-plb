@@ -64,6 +64,9 @@ function! plb#Debug()
   if has("win32")
     " Windows
     execute "!start cmd /c cd " . runtime_dir . " & " . "plbwin dbgiface " . shellescape(expand("%:t:r")) . " " . runtime_args . " & pause"
+  else
+    "Linux
+    execute "!cd " . runtime_dir . " & " . "plb -d " . shellescape(expand("%:t:r")) . " " . runtime_args
   endif
 
 endfunction
