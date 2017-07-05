@@ -10,4 +10,10 @@ if has("win32")
   nnoremap <silent> <buffer> <localleader><F2> :!start cmd /c "plbrun.chm" & pause<CR>
 endif
 
+" Check if tagbar is installed under plugins or is directly under rtp.
+" If so, create TagbarToggle mapping
+if globpath(&rtp, 'plugin/tagbar.vim') == ""
+  nnoremap <silent> <buffer> <localleader><F9> :TagbarToggle<CR>
+endif
+
 " vim: sw=2 ts=2 et
