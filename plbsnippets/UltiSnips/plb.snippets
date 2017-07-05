@@ -1,0 +1,47 @@
+##########################
+# INSTRUCTIONS
+##########################
+
+# move instruction
+snippet mv "move x, y"
+move ${1:label}, ${0:label}
+endsnippet
+
+# unpack instruction
+snippet up "unpack x, y, z, ..."
+unpack ${1:${VISUAL}}, ${0:label}
+endsnippet
+
+# unpack empty instruction
+snippet upe "unpack '', x"
+unpack "", ${0:${VISUAL}}
+endsnippet
+
+# call function giving result using ...
+snippet cfr "call function giving result using ..."
+call ${0:${VISUAL}} giving ${1:result} using ${2:label}
+endsnippet
+
+##########################
+# CONDITIONALS
+##########################
+
+# if condition
+snippet if "if ( ... )"
+if ( ${1:condition} )
+	${0:${VISUAL}}
+endsnippet
+
+# elseif condition
+snippet elif "elseif ( ... )"
+elseif ( ${1:condition} )
+	${0:${VISUAL}}
+endsnippet
+
+# else snippet
+snippet else
+else
+	${0:${VISUAL}}
+endif
+endsnippet
+
