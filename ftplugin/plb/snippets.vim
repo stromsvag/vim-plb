@@ -9,21 +9,9 @@ function! s:PLBUltiSnips()
   endif
 
   if !exists("g:UltiSnipsSnippetDirectories")
-    if has("win32")
-      " Windows
-      let g:UltiSnipsSnippetDirectories = ["plbsnippets\UltiSnips"]
-    else
-      " Linux
-      let g:UltiSnipsSnippetDirectories = ["plbsnippets/UltiSnips"]
-    endif
+    let g:UltiSnipsSnippetDirectories = ["plbsnippets/UltiSnips"]
   else
-    if has("win32")
-      " Windows
-      let g:UltiSnipsSnippetDirectories += ["plbsnippets\UltiSnips"]
-    else
-      " Linux
-      let g:UltiSnipsSnippetDirectories += ["plbsnippets/UltiSnips"]
-    endif
+    let g:UltiSnipsSnippetDirectories += ["plbsnippets/UltiSnips"]
   endif
 endfunction
 
