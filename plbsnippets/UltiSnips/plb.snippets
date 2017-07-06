@@ -1,10 +1,57 @@
 ##########################
+# COMMENTS
+##########################
+
+# add inline comment
+snippet // "text //"
+${0:${VISUAL}}  // ${1:comment}
+endsnippet
+
+##########################
+# LABELS
+##########################
+
+# simple dim
+snippet "ld(\d+)" "myDim dim 10" r
+${0:${VISUAL}} dim `!p snip.rv = match.group(1)`
+endsnippet
+
+# simple dim init
+snippet ldi "myDim init 'text'"
+${0:${VISUAL}} init "${1:text}"
+endsnippet
+
+# simple form
+snippet "lf(\d*\.\d+|\d+)" "myDim form 10.2" r
+${0:${VISUAL}} form `!p snip.rv = match.group(1)`
+endsnippet
+
+# simple record
+snippet lrec "label record ..."
+${0:${VISUAL}} record
+`!p snip.rv = "\t" + "recordend"`
+endsnippet
+
+# simple record like
+snippet lrecl "label record like ..."
+${0:${VISUAL}} record like ${1:record}
+endsnippet
+
+# simple function
+snippet lfunc "myFunc function ..."
+${0:${VISUAL}} function
+`!p snip.rv = "\t" + "entry"`
+`!p snip.rv = "functionResult form 1"`
+`!p snip.rv = "\t" + "functionend using functionResult"`
+endsnippet
+
+##########################
 # INSTRUCTIONS
 ##########################
 
 # move instruction
 snippet mv "move x, y"
-move ${1:label}, ${0:label}
+move ${1:${VISUAL}}, ${0:label}
 endsnippet
 
 # unpack instruction
@@ -17,9 +64,24 @@ snippet upe "unpack '', x"
 unpack "", ${0:${VISUAL}}
 endsnippet
 
+# append instruction
+snippet ap "append x, y"
+append ${1:${VISUAL}}, ${0:label}
+endsnippet
+
+# append text instruction
+snippet apt "append 'some text', y"
+append "${1:${VISUAL}}", ${0:label}
+endsnippet
+
+# replace char with char from label
+snippet repl "replace 'char char', label"
+replace "${1:chars}", ${0:${VISUAL}}
+endsnippet
+
 # call function giving result using ...
 snippet cfr "call function giving result using ..."
-call ${0:${VISUAL}} giving ${1:result} using ${2:label}
+call ${0:${VISUAL}} giving ${1:functionResult} using ${2:label}
 endsnippet
 
 ##########################
@@ -44,4 +106,3 @@ else
 	${0:${VISUAL}}
 endif
 endsnippet
-
