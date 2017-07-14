@@ -54,6 +54,12 @@ snippet mv "move x, y"
 move ${1:${VISUAL}}, ${0:label}
 endsnippet
 
+# squeeze instruction
+snippet sq "squeeze x, y"
+squeeze ${2:${VISUAL}}, ${1:${VISUAL}}
+$0
+endsnippet
+
 # unpack instruction
 snippet up "unpack x, y, z, ..."
 unpack ${1:${VISUAL}}, ${0:label}
