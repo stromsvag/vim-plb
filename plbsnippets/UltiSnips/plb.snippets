@@ -26,6 +26,11 @@ snippet "lf(\d*\.\d+|\d+)" "myDim form 10.2" r
 ${0:${VISUAL}} form `!p snip.rv = match.group(1)`
 endsnippet
 
+# const
+snippet lc "myConstant const '1'"
+${0:${VISUAL}} const "${1:number}"
+endsnippet
+
 # simple record
 snippet lrec "label record ..."
 ${0:${VISUAL}} record
@@ -96,6 +101,14 @@ return using ${1:functionResult}
 $0
 endsnippet
 
+# switch instruction
+snippet sw "switch myCase..."
+switch ${1:label}
+	case ${2:case}
+		$0
+	default
+endswitch
+endsnippet
 ##########################
 # CONDITIONALS
 ##########################
